@@ -1,0 +1,373 @@
+/*  
+- Resetando, para não herdar as configurações de padding e margem do navegador.
+- Border-box para o padding e a borda serem considerados no cálculo da dimensão total do conteúdo.
+- Definindo fonte de texto para toda a página. A fonte dos headings vou definir individualmente. 
+*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 
+- Delimitando a largura máxima dos containers para 1280px. Mesmo se abrir a página em uma tela maior, 
+por exemplo monitor 4K, o conteúdo não vai se expandir tudo isso, vão ficar espaços em branco nas laterais mesmo. 
+- DÚVIDA: Não sei para que serve o width: 100%.
+- Com a margem auto nas laterais indicamos para o navegador centralizar o conteúdo, 
+e ele mesmo calcula qual deve ser essa margem das laterais dependendo do tamanho da janela.
+*/
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*
+- Definindo a cor do fundo e do texto do header.
+*/
+
+header {
+    background-color:  rgb(173, 156, 229);
+    color: #ecf0f1;
+}
+
+/*
+- Mostrando H1 e links na mesma linha.
+- Alinhando H1 e links verticalmente.
+- Espaçando H1 e links entre si, de modo que um vai para o canto esquerdo e o outro para o canto direito.
+- Com o padding em cima e embaixo tb altero a altura do header, que estará sempre preenchido pela cor do fundo.
+- Com o padding das laterais garanto que os textos não ficarão colados nas laterais, no caso de janelas menores que 1280px.
+*/
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+}
+
+/*
+- Mostrando os 3 links na mesma linha.
+- Definindo margem dos links para não ficarem colados.
+*/
+
+header nav li {
+    display: inline;
+    margin-left: 30px;
+}
+
+/*
+- Removendo o underline do link.
+- Definindo cor do link.
+- Fonte em negrito.
+*/
+
+header nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/*
+- Underline ondulado roxo ao descansar o mouse em cima do link.
+*/
+
+header nav li a:hover {
+    text-decoration: rgb(108, 95, 151) wavy underline;
+}
+
+/*
+- Definindo fonte e tamanho da fonte do H1. O H1 a princípio herdaria a fonte Montserrat, mas com essa definição 
+aqui estou sobrescrevendo com Rowdies.
+*/
+
+header h1 {
+    font-size: 42px;
+    font-family: 'Rowdies', sans-serif;
+}
+
+/* 
+- Todas as seções terão margem em cima e embaixo para não ficarem coladas.
+DÚVIDA: Por que entre uma seção e outra fica um espaço de 24px mesmo ao invés de 
+48px (que seria o 24px do bottom de uma e o 24px do top da outra)?
+*/
+
+section {
+    margin: 35px auto;
+}
+
+
+/*
+- Padding pra não grudar as laterais, nas telas 1280px ou menores. Por que não margem? Porque a margem já foi usada
+como auto para centralizar o bloco em qualquer tamanho de janela.
+- Display flex para a foto e a parte textual ficarem na mesma linha.
+*/
+
+#about .container {
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+- Alinhando o H2 na esquerda.
+*/
+
+#about h2 {
+    text-align: left;
+}
+
+/*
+- Dando espaçamento entre os parágrafos do texto.
+*/
+
+#about p {
+    margin-bottom: 10px;
+}
+
+/*
+- Centralizando todos os H2, menos o da seção Sobre mim, que aqui em cima eu defini como alinhado na esquerda.
+- Definindo cor, tamanho e fonte de todos os H2.
+*/
+
+section h2 {
+    text-align: center;
+    color: rgb(173, 156, 229);
+    font-size: 28px;
+    font-family: 'Rowdies', sans-serif;
+    margin-bottom: 25px;
+}
+
+/*
+- Definindo tamanho da foto do bolo e deixando sua borda arredondada.
+*/
+
+#about img {
+    height: 300px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+/*
+- Definindo tamanho e margem dos H3, que são o título dos depoimentos de clientes.
+*/
+
+section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/*
+- Definindo tamanho da foto dos clientes e margem para distanciar do nome do cliente.
+*/
+
+#clients img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/*
+- Deixando os depoimentos na mesma linha.
+- Definindo a largura dessa seção porque eu quis que ela ficasse menos larga do que o resto.
+*/
+
+#clients .depoimentos {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+- Centralizando o texto dos depoimentos e usando margem para descolar um depoimento do outro.
+*/
+
+#clients .depoimentos div {
+    margin: 15px;
+    text-align: center;
+}
+
+/*
+- Deixando foto do cliente e nome do cliente na mesma linha, e centralizando-os verticalmente.
+*/
+
+#perfil-cliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+- Deixando os produtos na mesma linha.
+- Diminuindo a largura da seção.
+*/
+
+#options .produtos {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0px auto;
+}
+
+/*
+- Diminuindo o tamanho da imagem.
+- Adicionando um fundo redondo lilás à imagem, que tem fundo transparente.
+*/
+
+#options img {
+    height: 160px;
+    background-color: rgb(233, 226, 255);
+    border-radius: 100px;
+    padding: 25px;
+    margin-bottom: 15px;
+}
+
+/*
+- O fundo fica mais escuro ao descansar o mouse em cima.
+*/
+
+#options img:hover {
+    background-color: rgb(173, 156, 229);
+}
+
+/*
+- Removendo o underline do link.
+- Removendo a cor azul padrão de links.
+*/
+
+#options a {
+    text-decoration: none;
+    color: black;
+}
+
+/*
+- Underline ondulado ao descansar o mouse em cima do link.
+*/
+
+#options a:hover {
+    text-decoration: rgb(173, 156, 229) wavy underline;
+}
+
+/*
+- Centralizando o link.
+*/
+
+#options p {
+    text-align: center;
+}
+
+/*
+- Desgrudando um produto do outro.
+*/
+
+#options .produtos div {
+    margin: 0px 20px;
+}
+
+/*
+- Centralizando as labels do form.
+*/
+#contact form {
+    text-align: center;
+}
+
+/*
+- Deixando um elemento embaixo do outro.
+- Padding para o texto do placeholder não ficar colado na borda do campo (idem para o texto do botão).
+*/
+
+form input,
+form textarea,
+form button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+/*
+- Definindo largura dos primeiros campos.
+*/
+
+form input {
+    width: 300px;
+}
+
+/*
+- Centralizando só o texto do placeholder, de modo que quando a pessoa clicar para digitar, o texto em si 
+estará normalmente alinhado na esquerda.
+*/
+
+form input::placeholder {
+    text-align: center;
+}
+
+/*
+- Diminuindo a largura do campo de data e centralizando a data.
+*/
+
+form input#data  {
+    width: 150px;
+    text-align: center;
+}
+
+/*
+- Removendo a possibilidade do usuário redimensionar o textarea.
+- Definindo altura e largura do textarea.
+*/
+
+form textarea {
+    resize: none;
+    height: 180px;
+    width: 500px;
+}
+
+/*
+- Definindo largura do botão, cor do fundo, cor do texto, texto em negrito, sem linha de borda, borda arredondada em 25px.
+- Cursor da mãozinha (ao invés da setinha) quando o mouse descansa em cima do botão, para demonstrar que é clicável, 
+assim como acontece naturalmente com tudo que é link.
+*/
+
+form button {
+    width: 150px;
+    background-color:  rgb(173, 156, 229);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/*
+- Fundo mais escuro no botão quando o mouse descansa em cima dele. 
+*/
+
+form button:hover {
+    background-color:  rgb(108, 95, 151);
+}
+
+/*
+- Borda roxa nos campos do form quando clicados.
+*/
+
+input:focus, textarea:focus {
+    outline-color: rgb(173, 156, 229);
+}
+
+/*
+- Padding para o texto não ficar colado no background em cima e embaixo. Ao aumentar a altura do padding, 
+aumento a altura do footer, e o fundo colorido acompanha.
+- Definindo cor do fundo e cor da fonte.
+- Centralizando o texto.
+- Fonte em negrito.
+*/
+
+footer {
+    padding: 20px;
+    background-color: rgb(173, 156, 229);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
