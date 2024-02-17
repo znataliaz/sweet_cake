@@ -252,6 +252,14 @@ section h3 {
 }
 
 /*
+- Efeito hover da imagem sendo aplicado quando o mouse descansa em cima do link.
+*/
+
+#options .produtos div a:hover img {
+    background-color: rgb(173, 156, 229);  
+}
+
+/*
 - Centralizando o link.
 */
 
